@@ -6,8 +6,9 @@
       class="currency"
       :key="idx"
     >
-      {{ currency.description }}:
+
       <span class="lighten">
+        {{ currency.description }}:
       <span v-html="currency.symbol"></span>      {{ currency.rate }}:
     </span>
     </div>
@@ -28,15 +29,9 @@ export default {
       .get('https://api.coindesk.com/v1/bpi/currentprice.json')
       .then(response => (this.info = response.data.bpi))
   }
-  /* filters: {
-    getValue () {
-      return this.currency.rate
-    }
-  } */
 }
-
 </script>
 
-<style scoped>
+<style>
 
 </style>
